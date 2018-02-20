@@ -7,7 +7,12 @@ from nltk.stem import WordNetLemmatizer
 import pickle
 
 def create_word_features(words):
-	useful_words = [word for word in words if word not in stopwords.words("english")]
+
+	no_more_discrete = []
+	for i in words:
+		no_more_discrete.append(i[0].lower())
+
+	useful_words = [word for word in no_more_discrete if word not in stopwords.words("english")]
 	my_dict = dict([(word, True) for word in useful_words])
 	return my_dict
 
@@ -20,8 +25,9 @@ for fileid in movie_reviews.fileids('neg'):
 	words_ = movie_reviews.words(fileid)
 	words = []
 
+
 	for i in words_:
-		words.append(i)
+		words.append(word_tokenize(i))
 
 	for i in words_:
 		alt_word = lemmatizer.lemmatize(i, pos = "a")
@@ -36,7 +42,7 @@ for fileid in movie_reviews.fileids('pos'):
 	words = []
 
 	for i in words_:
-		words.append(i)
+		words.append(word_tokenize(i))
 
 	for i in  words_:
 		alt_word = lemmatizer.lemmatize(i, pos = "a")
