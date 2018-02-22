@@ -1,9 +1,6 @@
 import nltk.classify.util
 from nltk.classify import NaiveBayesClassifier
 from nltk.corpus import movie_reviews
-from nltk.collocations import BigramCollocationFinder
-from nltk.metrics import BigramAssocMeasures
-import itertools
 import pickle
 
 def create_word_features(words):
@@ -15,12 +12,8 @@ pos_reviews = []
 negids = movie_reviews.fileids('neg')
 posids = movie_reviews.fileids('pos')
 
-print("1")
-
 neg_reviews = [(create_word_features(movie_reviews.words(fileids = [inn])), 'negative') for inn in negids]
 pos_reviews = [(create_word_features(movie_reviews.words(fileids = [inn])), 'positive') for inn in posids]
-
-print("2")
 
 neg_cutoff = 750
 pos_cutoff = 750
