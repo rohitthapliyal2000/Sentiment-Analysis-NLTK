@@ -1,58 +1,32 @@
 import nltk.classify.util
 from nltk.classify import NaiveBayesClassifier
 from nltk.corpus import movie_reviews
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
+from nltk.collocations import BigramCollocationFinder
+from nltk.metrics import BigramAssocMeasures
+import itertools
 import pickle
 
 def create_word_features(words):
-
-	no_more_discrete = []
-	for i in words:
-		no_more_discrete.append(i[0].lower())
-
-	useful_words = [word for word in no_more_discrete if word not in stopwords.words("english")]
-	my_dict = dict([(word, True) for word in useful_words])
-	return my_dict
-
-lemmatizer = WordNetLemmatizer()
+	return dict([(word, True) for word in words])
 
 neg_reviews = []
 pos_reviews = []
 
-for fileid in movie_reviews.fileids('neg'):
-	words_ = movie_reviews.words(fileid)
-	words = []
+negids = movie_reviews.fileids('neg')
+posids = movie_reviews.fileids('pos')
 
+print("1")
 
-	for i in words_:
-		words.append(word_tokenize(i))
+neg_reviews = [(create_word_features(movie_reviews.words(fileids = [inn])), 'negative') for inn in negids]
+pos_reviews = [(create_word_features(movie_reviews.words(fileids = [inn])), 'positive') for inn in posids]
 
-	for i in words_:
-		alt_word = lemmatizer.lemmatize(i, pos = "a")
-		if(alt_word != i):
-			words.append(alt_word)
+print("2")
 
-	neg_reviews.append((create_word_features(words), "negative"))
+neg_cutoff = 750
+pos_cutoff = 750
 
-
-for fileid in movie_reviews.fileids('pos'):
-	words_ = movie_reviews.words(fileid)
-	words = []
-
-	for i in words_:
-		words.append(word_tokenize(i))
-
-	for i in  words_:
-		alt_word = lemmatizer.lemmatize(i, pos = "a")
-		if(alt_word != i):
-			words.append(alt_word)
-
-	pos_reviews.append((create_word_features(words), "positive"))
-
-train_set = neg_reviews[:750] + pos_reviews[:750]
-test_set = neg_reviews[750:] + pos_reviews[750:]
+train_set = neg_reviews[:neg_cutoff] + pos_reviews[:pos_cutoff]
+test_set = neg_reviews[neg_cutoff:] + pos_reviews[pos_cutoff:]
 
 #Run next 4 instructions if you're running the script for first time 
 classifier = NaiveBayesClassifier.train(train_set)
