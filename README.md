@@ -36,15 +36,15 @@ Rest 25% was used to test the Classifier module.
 
 ## Analysis of movie_reviews corpora :
 
-Accuracy on modified algorithm : __72.8
+Accuracy on modified algorithm : __72.8__
 
-Accuracy with algorithm including bigrams : __84.8
+Accuracy with algorithm including bigrams : __84.8__
 
 
 ## Analysis of twitter_samples corpora :
 
-Accuracy with algorithm excluding emoticons : __76.9
+Accuracy with algorithm excluding emoticons : __76.9__
 
-Accuracy on modified algorithm : __97.35
+Accuracy on modified algorithm : __97.35__
 
-Accuracy with algorithm including bigrams : __99.1
+Accuracy with algorithm including bigrams : __99.1__
