@@ -1,6 +1,6 @@
 # Sentiment-Analysis-NLTK
 
-## Basic ALgorithm :
+## Basic Algorithm :
 
 NaiveBayesClassifier was used as the opinion classifier.
 
