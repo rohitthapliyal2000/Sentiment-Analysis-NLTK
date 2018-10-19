@@ -1,6 +1,6 @@
 # Sentiment-Analysis-NLTK
 
-## Basic Algorithm :
+## Basic Algorithm:
 
 NaiveBayesClassifier was used as the opinion classifier.
 
@@ -13,7 +13,7 @@ The sentences was converted to form bag of words.
 Rest 25% was used to test the Classifier module.
 
 
-## Modifying the algorithm :
+## Modifying the algorithm:
 
 *   Using first __'N'__ frequent words can increase the accuracy.
 
@@ -34,17 +34,17 @@ Rest 25% was used to test the Classifier module.
     The algorithm can be trained once and classifying the data will take no time henceforth.
 
 
-## Analysis of movie_reviews corpora :
+## Analysis of movie_reviews corpora:
 
-Accuracy on modified algorithm : __72.8__
+Accuracy on modified algorithm: __72.8__
 
-Accuracy with algorithm including bigrams : __84.8__
+Accuracy with algorithm including bigrams: __84.8__
 
 
-## Analysis of twitter_samples corpora :
+## Analysis of twitter_samples corpora:
 
-Accuracy with algorithm excluding emoticons : __76.9__
+Accuracy with algorithm excluding emoticons: __76.9__
 
-Accuracy on modified algorithm : __97.35__
+Accuracy on modified algorithm: __97.35__
 
-Accuracy with algorithm including bigrams : __99.1__
+Accuracy with algorithm including bigrams: __99.1__ 
