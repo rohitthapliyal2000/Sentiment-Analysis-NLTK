@@ -34,14 +34,14 @@ Rest 25% was used to test the Classifier module.
     The algorithm can be trained once and classifying the data will take no time henceforth.
 
 
-## Analysis of movie_reviews corpora :
+## Accuracy of movie_reviews corpora :
 
 Accuracy on modified algorithm : __72.8__
 
 Accuracy with algorithm including bigrams : __84.8__
 
 
-## Analysis of twitter_samples corpora :
+## Accuracy of twitter_samples corpora :
 
 Accuracy with algorithm excluding emoticons : __76.9__
 
