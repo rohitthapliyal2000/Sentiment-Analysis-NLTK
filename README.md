@@ -47,4 +47,4 @@ Accuracy with algorithm excluding emoticons: __76.9__
 
 Accuracy on modified algorithm: __97.35__
 
-Accuracy with algorithm including bigrams: __99.1__
+Accuracy with algorithm including bigrams: __99.1__ 
