@@ -12,6 +12,7 @@ The sentences was converted to form bag of words.
 
 Rest 25% was used to test the Classifier module.
 
+*NaiveBayesClassifier :* https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c
 
 ## Modifying the algorithm:
 
